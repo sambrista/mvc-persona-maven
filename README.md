@@ -2,16 +2,16 @@
 
 Este proyecto es un ejemplo **sencillísimo** para ilustrar la arquitectura **MVC** (Modelo–Vista–Controlador) en Java, usando **Maven** y **JUnit 5**.
 
-## Objetivo didáctico
+## ¿Qué puedo aprender?
 
-- Ver claramente cómo se relacionan:
-  - **Model**: datos + validaciones
-  - **View**: consola (mostrar/pedir datos)
-  - **Controller**: coordina el flujo
-  - **Main**: punto de entrada, contiene la lógica de la aplicación
-- CRUD mínimo sobre una única entidad `Persona`.
+Observa como:
 
-## Relación entre capas (diagrama textual)
+- La clase `Persona` de **model** se encarga de contener los datos de una persona, y comprobar que sean correctos.
+- La clase `ConsoleView` de **view** se encarga de mostrar mensajes, errores, personas... por pantalla, y pedir datos al usuario.
+- La clase `PersonaController` nos permite realizar operaciones sobre una persona, utilizando `Persona` para gestionar la información y `ConsoleView` para mostrar y pedir datos.
+- La clase `Main` contiene el programa principal, que mediante el controlador realiza las operaciones que el usuario demanda.
+
+## Relación entre capas
 
 `Main` → llama a → `Controller`
 
