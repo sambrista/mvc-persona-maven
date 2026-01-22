@@ -1,12 +1,11 @@
 package view;
 
+import model.Persona;
 import utils.Utils;
 
 /**
  * VISTA (View): solo muestra información y pide datos al usuario.
- * Importante: NO crea el modelo Persona. Devuelve datos al controlador.
- *
- * Se ha definido como clase estática (métodos static) para simplificar.
+ * Importante: No crea el modelo Persona. Devuelve datos al controlador.
  */
 public final class ConsoleView {
 
@@ -36,8 +35,10 @@ public final class ConsoleView {
         System.out.println(mensaje);
     }
 
-    public static void mostrarPersona(String descripcion) {
-        System.out.println(descripcion);
+    public static void mostrarPersona(Persona persona) {
+        if (persona != null) {
+            System.out.println("Persona almacenada: " + persona);
+        }
     }
 
     public static void mostrarError(String mensaje) {

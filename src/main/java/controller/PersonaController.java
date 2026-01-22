@@ -22,36 +22,36 @@ public class PersonaController {
 
     // CRUD: Read
     public void mostrarPersona() {
-        if (personaActual == null) {
-            ConsoleView.mostrarPersona("No hay ninguna persona creada todavía.");
+        if (this.personaActual == null) {
+            ConsoleView.mostrarError("No hay ninguna persona creada todavía.");
             return;
         }
-        ConsoleView.mostrarPersona("Persona actual: " + personaActual);
+        ConsoleView.mostrarPersona(this.personaActual);
     }
 
     // CRUD: Update
     public void actualizarPersona() {
-        if (personaActual == null) {
-            ConsoleView.mostrarMensaje("No hay persona para actualizar. Primero crea una.");
+        if (this.personaActual == null) {
+            ConsoleView.mostrarError("No hay persona para actualizar. Primero crea una.");
             return;
         }
 
         String nombre = ConsoleView.pedirNombre();
         int edad = ConsoleView.pedirEdad();
 
-        personaActual.setNombre(nombre);
-        personaActual.setEdad(edad);
+        this.personaActual.setNombre(nombre);
+        this.personaActual.setEdad(edad);
 
         ConsoleView.mostrarMensaje("Persona actualizada correctamente.");
     }
 
     // CRUD: Delete
     public void borrarPersona() {
-        if (personaActual == null) {
-            ConsoleView.mostrarMensaje("No hay persona para borrar.");
+        if (this.personaActual == null) {
+            ConsoleView.mostrarError("No hay persona para borrar.");
             return;
         }
-        personaActual = null;
+        this.personaActual = null;
         ConsoleView.mostrarMensaje("Persona borrada correctamente.");
     }
 
@@ -62,18 +62,18 @@ public class PersonaController {
     }
 
     public void actualizarPersona(String nombre, int edad) {
-        if (personaActual == null) {
+        if (this.personaActual == null) {
             throw new IllegalStateException("No existe persona para actualizar.");
         }
-        personaActual.setNombre(nombre);
-        personaActual.setEdad(edad);
+        this.personaActual.setNombre(nombre);
+        this.personaActual.setEdad(edad);
     }
 
     public void borrarPersonaSinVista() {
-        personaActual = null;
+        this.personaActual = null;
     }
 
     public Persona getPersonaActual() {
-        return personaActual;
+        return this.personaActual;
     }
 }

@@ -24,7 +24,7 @@ public class Persona {
     }
 
     public int getEdad() {
-        return edad;
+        return this.edad;
     }
 
     public void setEdad(int edad) {
@@ -36,6 +36,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{nombre='" + nombre + "', edad=" + edad + "}";
+        return this.nombre + " (" + this.edad + " años)";
     }
 }
