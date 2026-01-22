@@ -55,7 +55,7 @@ public class PersonaController {
         ConsoleView.mostrarMensaje("Persona borrada correctamente.");
     }
 
-    // --- Métodos auxiliares para testing determinista (sin consola) ---
+    // --- Métodos auxiliares sin vista ---
 
     public void crearPersona(String nombre, int edad) {
         this.personaActual = new Persona(nombre, edad);

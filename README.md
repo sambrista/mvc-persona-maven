@@ -8,8 +8,11 @@ Observa como:
 
 - La clase `Persona` de **model** se encarga de contener los datos de una persona, y comprobar que sean correctos.
 - La clase `ConsoleView` de **view** se encarga de mostrar mensajes, errores, personas... por pantalla, y pedir datos al usuario.
-- La clase `PersonaController` nos permite realizar operaciones sobre una persona, utilizando `Persona` para gestionar la información y `ConsoleView` para mostrar y pedir datos.
-- La clase `Main` contiene el programa principal, que mediante el controlador realiza las operaciones que el usuario demanda.
+- La clase `PersonaController` de **controller** nos permite realizar operaciones sobre una persona, utilizando `Persona` para gestionar la información y `ConsoleView` para mostrar y pedir datos.
+- La clase `Main` de **app** contiene el programa principal, que mediante el controlador realiza las operaciones que el usuario demanda.
+- La clase `Utils` de **utils** proporciona métodos independientes que son útiles.
+
+En cada paquete encontrarás un archivo `README.md` que explica más a fondo la clase que contiene.
 
 ## Relación entre capas
 
