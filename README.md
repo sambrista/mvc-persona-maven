@@ -1,4 +1,4 @@
-# MVC Persona (Java + Maven + JUnit) — Ejemplo de consola (muy simple)
+# MVC Persona (Java + Maven + JUnit) super simple
 
 Este proyecto es un ejemplo **sencillísimo** para ilustrar la arquitectura **MVC** (Modelo–Vista–Controlador) en Java, usando **Maven** y **JUnit 5**.
 
@@ -8,7 +8,7 @@ Este proyecto es un ejemplo **sencillísimo** para ilustrar la arquitectura **MV
   - **Model**: datos + validaciones
   - **View**: consola (mostrar/pedir datos)
   - **Controller**: coordina el flujo
-  - **Main**: punto de entrada
+  - **Main**: punto de entrada, contiene la lógica de la aplicación
 - CRUD mínimo sobre una única entidad `Persona`.
 
 ## Relación entre capas (diagrama textual)
@@ -24,9 +24,9 @@ Este proyecto es un ejemplo **sencillísimo** para ilustrar la arquitectura **MV
 ## Estructura de paquetes
 
 - `app`
-  - `Main` (arranque)
+  - `Main` (arranque y flujo)
 - `controller`
-  - `PersonaController` (flujo + CRUD)
+  - `PersonaController` (CRUD)
 - `model`
   - `Persona` (nombre, edad + validaciones)
 - `view`
