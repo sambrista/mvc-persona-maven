@@ -1,5 +1,6 @@
 package controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonaControllerTest {
 
     @Test
+    @DisplayName("Al crear persona el modelo queda actualizado")
     void alCrearPersonaElModeloQuedaActualizado() {
         PersonaController controller = new PersonaController();
 
@@ -18,6 +20,7 @@ class PersonaControllerTest {
     }
 
     @Test
+    @DisplayName("Actualizar persona cambia los datos")
     void actualizarPersonaCambiaLosDatos() {
         PersonaController controller = new PersonaController();
         controller.crearPersona("Eva", 25);
@@ -29,6 +32,7 @@ class PersonaControllerTest {
     }
 
     @Test
+    @DisplayName("Borrar persona deja el modelo a null")
     void borrarPersonaDejaElModeloANull() {
         PersonaController controller = new PersonaController();
         controller.crearPersona("Pepe", 40);
