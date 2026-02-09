@@ -56,20 +56,6 @@ Es el método que “lleva el control” de la aplicación.
 - Elimina la referencia a la persona actual.
 - Informa al usuario del resultado.
 
-## Métodos sin vista
-
-En este proyecto, los métodos `crearPersona()`, `mostrarPersona()`, `actualizarPersona()`, y `borrarPersona()` del controlador **piden los datos** a la vista, muestran mensajes al usuario...  
-Esto se hace así para mantener el ejemplo **muy simple** y porque el controlador es el componente que **orquesta el flujo** (menú → pedir datos → actualizar modelo → mostrar resultado).
-
-Para mejorar la testabilidad y desacoplar la entrada por consola, el controlador también ofrece métodos alternativos que recibe los datos como parámetros, o los devuelven en lugar de imprimirlos.  
-
-- `void crearPersona(String nombre, int edad)`
-- `void actualizarPersona(String nombre, int edad)`
-- `void borrarPersonaSinVista()`
-- `Persona getPersonaActual()`
-
-En proyectos más grandes, es común que la interacción (I/O) esté aún más separada y que el controlador se centre en métodos que reciben datos ya validados o transformados.
-
 ## Relación con otras clases
 - **Usa**:
     - `view.ConsoleView`
