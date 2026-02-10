@@ -9,6 +9,7 @@ import java.util.Scanner;
  * Se usa desde la Vista (View) para pedir información al usuario.
  */
 public final class Utils {
+    private Utils() { /* Constructor oculto para evitar crear objetos de esta clase */ }
     private static final Scanner SC = new Scanner(System.in);
 
     /**
@@ -23,27 +24,30 @@ public final class Utils {
      * @return Un número entero dentro del rango especificado.
      */
     public static int pideEntero(String mensaje, int min, int max) {
-        while (true) {
-            System.out.print(mensaje);
+        int valor = 0;
+        boolean esValido;
 
-            String linea = SC.nextLine();
-            int valor;
+        do {
+            ConsoleView.mostrarMensaje(mensaje);
 
             try {
-                valor = Integer.parseInt(linea.trim());
+                valor = SC.nextInt();
+                esValido = valor >= min && valor <= max;
+
+                if (!esValido) {
+                    ConsoleView.mostrarError("El número debe estar entre " + min + " y " + max + ".");
+                }
+
             } catch (NumberFormatException ex) {
-                ConsoleView.mostrarError("debes introducir un número entero válido.");
-                continue;
+                ConsoleView.mostrarError("Debes introducir un número entero válido.");
+                esValido = false;
             }
 
-            if (valor < min || valor > max) {
-                ConsoleView.mostrarError("el número debe estar entre " + min + " y " + max + ".");
-                continue;
-            }
+        } while (!esValido);
 
-            return valor;
-        }
+        return valor;
     }
+
 
     /**
      * Solicita al usuario que introduzca un texto no vacío.
@@ -54,22 +58,18 @@ public final class Utils {
      * @return Una cadena de texto no vacía introducida por el usuario.
      */
     public static String pideTextoNoVacio(String mensaje) {
-        while (true) {
-            System.out.print(mensaje);
+        String texto = "";
 
-            String texto = SC.nextLine();
-            if (texto == null) {
-                ConsoleView.mostrarError("debes introducir texto.");
-                continue;
+        while (texto.isBlank()) {
+            ConsoleView.mostrarMensaje(mensaje);
+            texto = SC.nextLine();
+
+            if (texto == null || texto.isBlank()) {
+                ConsoleView.mostrarError("El texto no puede estar vacío.");
+                texto = "";
             }
-
-            String limpio = texto.trim();
-            if (limpio.isEmpty()) {
-                ConsoleView.mostrarError("el texto no puede estar vacío.");
-                continue;
-            }
-
-            return limpio;
         }
+
+        return texto.trim();
     }
 }

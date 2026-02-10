@@ -9,6 +9,8 @@ import utils.Utils;
  */
 public final class ConsoleView {
 
+    private ConsoleView() { /* Constructor oculto para evitar crear objetos de esta clase */ }
+
     /**
      * Muestra un menú de opciones para la gestión de personas y solicita la entrada de una opción por parte del usuario.
      * La selección del usuario es validada para que sea un valor entero dentro del rango de opciones disponibles.
